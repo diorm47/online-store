@@ -1,0 +1,110 @@
+.cards_description {
+  max-width: 1100px;
+  margin: 32px auto 60px;
+}
+.cards_description p {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 146%;
+  text-align: center;
+  color: #000000;
+}
+
+.card_item {
+  width: 297px;
+  height: 579px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.card_item:hover {
+  box-shadow: -1px 0px 17px 3px rgba(0, 0, 0, 0.18);
+  -webkit-box-shadow: -1px 0px 17px 3px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: -1px 0px 17px 3px rgba(0, 0, 0, 0.18);
+}
+
+.card_image {
+  width: 100%;
+  height: 455.04px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  position: relative;
+}
+
+.card_descr {
+  width: 299.92px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card_descr p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 70%;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #000000;
+  margin-bottom: 16px;
+}
+.item_price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item_price p {
+  margin: 0;
+}
+
+.onmouse_over {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+}
+
+.addto_favvor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background: #ffffff;
+  margin-bottom: 13px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.addto_cart {
+  width: 129px;
+  height: 37px;
+  background: #ffffff;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.addto_cart p {
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.2px;
+  color: #000000;
+  margin-right: 17px;
+}
+
+.card_image .onmouse_over {
+  display: none;
+}
+.card_image:hover .onmouse_over {
+  display: flex;
+}

@@ -1,0 +1,61 @@
+.adress_form {
+  width: 413px;
+  height: 1036px;
+  background: #ffffff;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  margin-bottom: 40px;
+}
+
+.adress_form_wrapper h3 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 18px;
+  color: #000000;
+  margin: 64px 0 64px 64px;
+}
+
+.adress_form_wrapper p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  margin-bottom: 16px;
+  margin-top: 18px;
+}
+
+.adress_form .adress_form_wrapper input,
+select,
+option,
+textarea {
+  width: 350px;
+  height: 48px;
+  outline: none;
+  text-indent: 7px;
+  font-size: 17px;
+}
+
+.set_default {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: start;
+}
+.adress_form .set_default input {
+  width: 16px;
+  height: 16px;
+  background: #ed165f;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.set_default p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.adress_form_wrapper span {
+    color: red;
+}

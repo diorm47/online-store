@@ -1,0 +1,76 @@
+footer {
+  width: 100%;
+  height: 200px;
+  background: #f5f5f5;
+}
+
+.footer_wrapper {
+  max-width: 1260px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer_wrapper a,
+p,
+div {
+  font-size: 16px;
+  color: #000;
+}
+.about_block,
+.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 29px;
+}
+
+.socials img {
+  margin-right: 20px;
+}
+.socials .facebook_img {
+  margin-right: 25px;
+}
+
+.subscribe p {
+  margin-bottom: 20px;
+}
+
+.subscribe .input_block {
+  width: 270px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input_block input {
+  width: 210px;
+  height: 100%;
+  border: 1px solid #ed165f;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  text-indent: 10px;
+  outline: none;
+}
+
+.submit_button_ok {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ed165f;
+  background: #ed165f;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.email_adress {
+  margin-left: 30px;
+  line-height: 29px;
+}
