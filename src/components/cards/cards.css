@@ -108,3 +108,7 @@
 .card_image:hover .onmouse_over {
   display: flex;
 }
+
+.addto_favvor .selectedC * {
+  fill: #ed165f;
+}

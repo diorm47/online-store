@@ -37,10 +37,6 @@ const AccountInf = () => {
           <input type="date" {...register("birth", { required: true })} />
           {errors.birth && <span>* Date of birth field is required</span>}
 
-          <div className="change_password">
-            <a href="#">Change password</a>
-          </div>
-
           <div className="newsletters">
             <input
               className="newsletter_input"

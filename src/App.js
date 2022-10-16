@@ -17,9 +17,7 @@ const ProfilePage = React.lazy(() =>
   import("./pages/profile-page/profile-page")
 );
 
-const AddedToCart = React.lazy(() =>
-  import("./pages/added-to-cart/addedto-cart")
-);
+const Cart = React.lazy(() => import("./pages/added-to-cart/cart"));
 
 function App() {
   return (
@@ -35,7 +33,7 @@ function App() {
             <Route path="/shoes" element={<ShoesPage />} />
             <Route path="/accessories" element={<AccessoriesPage />} />
             <Route path="/profile/*" element={<ProfilePage />} />
-            <Route path="/cart" element={<AddedToCart />} />
+            <Route path="/cart/*" element={<Cart />} />
 
             <Route path="*" element={<Error404 />} />
           </Routes>
@@ -48,3 +46,7 @@ function App() {
 }
 
 export default App;
+
+// {order.reduce((acc, item) => {
+//   return acc + item.price;
+// }, 0)}

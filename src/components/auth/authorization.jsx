@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import "./auth.css";
-import { createAccount } from "../../redux/auth-reducer";
+import { createAccount, login } from "../../redux/auth-reducer";
 
 const Auth = () => {
   const [formType, setFormType] = useState(false);
@@ -15,12 +15,17 @@ const Auth = () => {
 
   const onSubmit = (data) => {
     let email = data.email;
-    if (data.confirm_password == data.create_password) {
+    if (data.confirm_password === data.create_password) {
       localStorage.setItem(data.email, JSON.stringify(data));
       dispatch(createAccount(email));
     } else {
       alert("Created and Confirmed Passwords are not similar!");
     }
+  };
+
+  const onAuthorize = (data) => {
+    localStorage.setItem(data.email, JSON.stringify(data));
+    dispatch(login(data));
   };
 
   return (
@@ -35,23 +40,39 @@ const Auth = () => {
           {!formType ? (
             <div className="sign_in">
               <h2>SIGN IN</h2>
-              <div className="signin_form">
-                <div className="email_sign">
-                  <p>Email</p>
-                  <input type="text" />
-                </div>
-                <div className="password_sign">
-                  <p>Password</p>
-                  <input type="password" />
-                </div>
 
-                <div className="remember_me">
-                  <input type="checkbox" name="rememberme" id="rememberme" />
-                  <p>Remeber my details</p>
-                </div>
-                <div className="signin_button">
-                  <input type="button" value="SIGN IN" />
-                </div>
+              <div className="signin_form">
+                <form onSubmit={handleSubmit(onAuthorize)}>
+                  <div className="email_sign">
+                    <p>Email</p>
+                    <input
+                      type="email"
+                      {...register("email", { required: true })}
+                    />
+                    {errors.email && <span>* Email field is required</span>}
+                  </div>
+                  <div className="password_sign">
+                    <p>Password</p>
+                    <input
+                      type="password"
+                      {...register(
+                        "password",
+
+                        { required: true }
+                      )}
+                    />
+                    {errors.password && (
+                      <span>* Password field is required</span>
+                    )}
+                  </div>
+                  <div className="remember_me">
+                    <input type="checkbox" name="rememberme" id="rememberme" />
+                    <p>Remeber my details</p>
+                  </div>
+                  <div className="signin_button">
+                    <input className="submit_button" type="submit" />
+                  </div>
+                </form>
                 <div
                   className="password_recovery"
                   onClick={() => setFormType(true)}

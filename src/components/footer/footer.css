@@ -74,3 +74,47 @@ div {
   margin-left: 30px;
   line-height: 29px;
 }
+
+@media only screen and (max-width: 1100px) {
+  .footer_logo {
+    display: none;
+  }
+  .footer_wrapper {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  footer {
+    height: 100%;
+  }
+  .footer_wrapper {
+    height: 100%;
+    flex-direction: column;
+  }
+  .about_block,
+  .socials {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+  }
+  .about_block a {
+    margin: 0 20px;
+  }
+  .socials div {
+    margin: 0 20px;
+  }
+  .socials img {
+    margin-right: 4px;
+  }
+  .subscribe p {
+    margin-bottom: 10px;
+  }
+  .email_adress {
+    margin: 20px 0;
+    text-align: center;
+  }
+  .email_adress br {
+    display: none;
+  }
+}

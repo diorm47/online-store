@@ -1,0 +1,122 @@
+.ordered_itm {
+  width: 968px;
+  height: 192px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  margin: 30px 0;
+}
+.ordered_item_inf {
+  width: 459px;
+  height: 192px;
+  background: #ffffff;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 30px;
+}
+
+.first_col .itm_img img {
+  width: 86px;
+  height: 86px;
+}
+
+.itm_img img {
+  width: 86px;
+}
+
+.item_status {
+  width: 86px;
+  height: 19px;
+  background: #f07b4e;
+  border-radius: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  cursor: default;
+}
+.item_status p {
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.item_inf {
+  margin-left: 32px;
+}
+.item_inf h3 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+.itm_price p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #ed165f;
+  margin-bottom: 8px;
+}
+.qty_del p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.qty_del span {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.item_payments {
+  width: 224px;
+  height: 192px;
+  background: #ffffff;
+  padding: 30px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.delivery_shipment {
+  width: 284px;
+  height: 192px;
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.item_payments h3,
+.delivery_shipment h3 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.item_payments p,
+.delivery_shipment p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #686868;
+}
+
+.delivery_shipment h3 {
+  margin-bottom: 0;
+}
+.shipping_adress {
+  margin-top: 20px;
+}
+
+.delivery_shipment p {
+  line-height: 20px;
+}

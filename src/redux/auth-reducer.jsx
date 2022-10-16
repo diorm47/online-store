@@ -4,7 +4,7 @@ const AUTH_USER = "AUTH_USER";
 let initialState = {
   email: null,
   password: null,
-  isAuth: true,
+  isAuth: false,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -19,7 +19,9 @@ const authReducer = (state = initialState, action) => {
     case AUTH_USER:
       return {
         ...state,
-        ...action.payload,
+        isAuth: (state.isAuth = true),
+        email: (state.email = action.payload),
+        password: (state.password = action.payload),
       };
 
     default:
@@ -33,10 +35,16 @@ export const createAccount = (payload) => {
     payload,
   };
 };
+export const login = (payload) => {
+  return {
+    type: AUTH_USER,
+    payload,
+  };
+}
 
 export const getAuthUserData = () => async (dispatch) => {};
 
-export const login = (email, password, rememberMe) => async (dispatch) => {};
+
 
 export const logout = () => async (dispatch) => {};
 

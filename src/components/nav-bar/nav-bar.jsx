@@ -1,19 +1,24 @@
-import React from "react";
-import { BrowserRouter, NavLink } from "react-router-dom";
-import "./nav-bar.css";
 import TextField from "@mui/material/TextField";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
+
+import "./nav-bar.css";
 
 import main_logo from "../../assets/icons/main_logo.png";
 import search_glass from "../../assets/icons/search_glass.png";
-
-import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
-import { ReactComponent as BasketIcon } from "../../assets/icons/shopping_cart.svg";
+import menu_icon from "../../assets/icons/menu_icon.png";
+import menu_close from "../../assets/icons/menu_close.png";
 import { ReactComponent as HeartIcon } from "../../assets/icons/favor.svg";
+import { ReactComponent as BasketIcon } from "../../assets/icons/shopping_cart.svg";
+import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
 
 const Navbar = () => {
+  const [menuActive, setActive] = useState(false);
+
   return (
     <div className="navbar">
-      <div className="nav_wrapper">
+      <div className={menuActive ? "nav_wrapper  " : "nav_wrapper hide_menu"}>
         <div className="nav_list">
           <div className="home">
             <NavLink to="/home">Home</NavLink>
@@ -60,6 +65,13 @@ const Navbar = () => {
             </NavLink>
           </div>
         </div>
+
+        <div className="menu_close" onClick={() => setActive(false)}>
+          <img src={menu_close} alt="menu icon " />
+        </div>
+      </div>
+      <div className="menu_icon" onClick={() => setActive(true)}>
+        <img src={menu_icon} alt="menu icon " />
       </div>
     </div>
   );

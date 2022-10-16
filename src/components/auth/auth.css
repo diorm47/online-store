@@ -165,3 +165,27 @@
   color: #000000;
   margin-bottom: 64px;
 }
+
+.signin_form input{
+  margin-bottom: 0;
+}
+
+.sign_in p {
+  margin-top: 32px;
+}
+.sign_in span {
+  color: red;
+}
+
+.remember_me {
+  margin-top: 20px;
+}
+
+.remember_me p {
+  margin: 0;
+  margin-left: 8px;
+}
+
+.password_recovery {
+  margin-top: 30px;
+}

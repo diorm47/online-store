@@ -1,0 +1,58 @@
+.default_adress {
+  width: 967px;
+  height: 238px;
+  background: #ffffff;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 32px;
+  padding: 32px 32px 32px 40px;
+}
+
+.adress_title h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #000000;
+  margin-bottom: 16px;
+}
+
+.adress_inf p {
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.adress_actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.adress_actions .del {
+  margin-left: 60px;
+}
+
+.adress_actions input {
+  width: 60px;
+  height: 20px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #ed165f;
+  border: #ffffff;
+  background: #ffffff;
+  transition: all 0.4s ease;
+}
+
+.adress_actions input:hover {
+  background: #f72c7046;
+}
+.default_adress_notice {
+  margin-bottom: 32px;
+}
