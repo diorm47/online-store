@@ -18,6 +18,11 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+.to_start_button:hover {
+  background: #ed165e44;
+  transition: all 0.3s ease;
 }
 
 .pagination {

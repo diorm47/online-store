@@ -1,9 +1,12 @@
 import React, { Suspense } from "react";
+import { useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
+
 import Error404 from "./components/error/error";
 import Footer from "./components/footer/footer";
 import Loader from "./components/loader/loader";
 import Navbar from "./components/nav-bar/nav-bar";
+import Search from "./components/search/search";
 
 const HomePage = React.lazy(() => import("./pages/home-page/home-page"));
 const ShoesPage = React.lazy(() => import("./pages/shoes-page/shoes-page"));
@@ -20,24 +23,30 @@ const ProfilePage = React.lazy(() =>
 const Cart = React.lazy(() => import("./pages/added-to-cart/cart"));
 
 function App() {
+  const serchingItem = useSelector((state) => state.search.searched);
+
   return (
     <div className="main_wrapper">
       <Navbar />
 
       <div className="content">
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route path="/" element={<Navigate to={"/home"} />} />
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/clothes" element={<ClothesPage />} />
-            <Route path="/shoes" element={<ShoesPage />} />
-            <Route path="/accessories" element={<AccessoriesPage />} />
-            <Route path="/profile/*" element={<ProfilePage />} />
-            <Route path="/cart/*" element={<Cart />} />
+        {serchingItem ? (
+          <Search />
+        ) : (
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route path="/" element={<Navigate to={"/home"} />} />
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/clothes" element={<ClothesPage />} />
+              <Route path="/shoes" element={<ShoesPage />} />
+              <Route path="/accessories" element={<AccessoriesPage />} />
+              <Route path="/profile/*" element={<ProfilePage />} />
+              <Route path="/cart/*" element={<Cart />} />
 
-            <Route path="*" element={<Error404 />} />
-          </Routes>
-        </Suspense>
+              <Route path="*" element={<Error404 />} />
+            </Routes>
+          </Suspense>
+        )}
       </div>
 
       <Footer />

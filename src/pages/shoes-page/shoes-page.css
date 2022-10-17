@@ -1,0 +1,257 @@
+.base {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.base_wrapper {
+  width: 1340px;
+  height: 100%;
+  margin: 0 auto;
+}
+.base_content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.base_title h1 {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 60%;
+  letter-spacing: 3px;
+  color: #000000;
+  margin: 88px 0 55px;
+}
+
+.filter_part {
+  max-width: 301px;
+  margin-bottom: 100px;
+}
+
+.categories {
+  margin-bottom: 64px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 90%;
+  color: #000000;
+  margin-bottom: 16px;
+}
+
+.black_line {
+  width: 301px;
+  background-color: #000;
+  border: 1px solid #00000080;
+  margin-bottom: 32px;
+}
+
+.categories_list {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.categories_list p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 112%;
+  text-transform: capitalize;
+  margin: 12px 0;
+  color: #686868;
+  cursor: pointer;
+}
+
+.sizes_block {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+.size_button {
+  width: 75px;
+  height: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 129%;
+  color: #000000;
+  margin: 0 16px 16px 0;
+  cursor: pointer;
+}
+
+.colors {
+  margin-bottom: 64px;
+}
+
+.color_button {
+  display: flex;
+  align-items: center;
+  margin: 0 16px 16px 0;
+}
+
+.color_button p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  color: #000000;
+}
+
+.color_button div {
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  margin-right: 7px;
+}
+
+.color_button .belge {
+  background: #f3ecdb;
+}
+.color_button .blue {
+  background: blue;
+  margin-left: 12px;
+}
+.color_button .black {
+  background: black;
+  margin-left: 10px;
+}
+.color_button .orange {
+  background: orange;
+}
+.color_button .green {
+  background: green;
+}
+.color_button .brown {
+  background: brown;
+}
+.color_button .purple {
+  background: purple;
+}
+.color_button .gold {
+  background: gold;
+  margin-left: 5px;
+}
+.color_button .taupe {
+  background: #cac1b8;
+  margin-left: 7px;
+}
+.color_button .white {
+  background: white;
+  border: 0.5px solid #000000;
+}
+.color_button .pink {
+  background: pink;
+  margin-left: 7px;
+}
+.color_button .red {
+  background: red;
+  margin-left: 10px;
+}
+
+.colors_block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.prices_filter input {
+  width: 27px;
+  height: 27px;
+  border: 0.5px solid #000000;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+.prices_filter div {
+  display: flex;
+  margin: 16px 0;
+}
+
+.price_filterer {
+  display: flex;
+}
+.price_filterer p {
+  font-weight: 600;
+  font-size: 14px;
+
+  color: #000000;
+  margin: 0 8px 0 8px;
+}
+
+.price_filterer input {
+  width: 61px;
+  height: 27px;
+  border: 0.5px solid #000000;
+  border-radius: 2px;
+  outline: none;
+  text-indent: 5px;
+}
+
+.apply_button {
+  width: 67px;
+  height: 27px;
+  background: #a8325a;
+  border-radius: 2px;
+  margin-left: 16px;
+  border: white;
+  font-weight: 300;
+  font-size: 14px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.products_part .black_line {
+  width: 990px;
+}
+
+.sort_select {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 28px;
+}
+
+.sort_select select,
+option {
+  width: 195px;
+  height: 37px;
+  background: #ffffff;
+  outline: none;
+  cursor: pointer;
+  text-indent: 10px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2px;
+
+  color: #000000;
+  margin-top: -20px;
+  margin-bottom: 16px;
+}
+
+.sort_select option {
+  height: 37px;
+}
+
+.products_part {
+  max-width: 990px;
+  height: auto;
+}
+.product_content .items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product_content .items {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

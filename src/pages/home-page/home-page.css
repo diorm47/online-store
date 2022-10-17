@@ -9,12 +9,12 @@
 
 .home_page_wrapper {
   width: 1150px;
-  height: 1190px;
+  /* height: 1190px; */
 }
 header {
   background: #ed165f;
   width: 100%;
-  height: 1190px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +27,14 @@ header {
   position: relative;
   z-index: 110px;
 }
+.background_logo img {
+  width: 100%;
+}
 
+.carousel-image {
+  width: 700px;
+  margin: 0 auto;
+}
 .carousel-container .prev,
 .next {
   display: none;
@@ -57,6 +64,7 @@ header {
   flex-direction: column;
   justify-content: center;
   margin-top: 120px;
+  margin-bottom: 40px;
 }
 
 .arrow_down h4 {
@@ -141,9 +149,8 @@ header {
   }
 }
 
-@media only screen and (max-width: 510px) {
-  .carousel .box {
-    width: 100%;
-    height: 950px;
+@media only screen and (max-width: 500px) {
+  .carousel-image {
+    width: 400px;
   }
 }

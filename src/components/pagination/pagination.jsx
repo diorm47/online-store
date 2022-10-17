@@ -4,7 +4,7 @@ import Cards from "../cards/cards";
 import "./pagination.css";
 import ScrollButton from "./../scroll-button/scroll-button";
 
-function Pagination({ itemsPerPage, items }) {
+function Pagination({ itemsPerPage, items, dropValue }) {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);

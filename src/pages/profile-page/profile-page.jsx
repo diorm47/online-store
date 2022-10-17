@@ -20,7 +20,11 @@ import { ReactComponent as SignOutIcon } from "../../assets/icons/sign_out.svg";
 const ProfilePage = () => {
   const isAuth = useSelector((state) => state.auth.isAuth);
 
-  if (isAuth == false) {
+  const signOut = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+  if (isAuth === false) {
     return <Auth />;
   }
   return (
@@ -57,7 +61,7 @@ const ProfilePage = () => {
               </div>
             </NavLink>
           </div>
-          <div className="sign_out">
+          <div className="sign_out" onClick={signOut}>
             <SignOutIcon />
             <p>SIGN OUT</p>
           </div>

@@ -12,9 +12,17 @@ import menu_close from "../../assets/icons/menu_close.png";
 import { ReactComponent as HeartIcon } from "../../assets/icons/favor.svg";
 import { ReactComponent as BasketIcon } from "../../assets/icons/shopping_cart.svg";
 import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { searchingItem } from "../../redux/search-reducer";
 
 const Navbar = () => {
+  const inCart = useSelector((state) => state.cart.cart);
+  const inFav = useSelector((state) => state.favorite.favorite);
   const [menuActive, setActive] = useState(false);
+  const dispatch = useDispatch();
+  const onSearch = (value) => {
+    dispatch(searchingItem(value));
+  };
 
   return (
     <div className="navbar">
@@ -46,6 +54,7 @@ const Navbar = () => {
               id="standard-basic"
               label="Search..."
               variant="standard"
+              onChange={(e) => onSearch(e.target.value)}
             />
             <img src={search_glass} alt="Search glass icon" />
           </div>
@@ -55,11 +64,22 @@ const Navbar = () => {
             </NavLink>
           </div>
           <div className="cart">
+            {!inCart.length || (
+              <div className="selected_length">
+                <p>{inCart.length}</p>
+              </div>
+            )}
+
             <NavLink to="/cart">
               <BasketIcon />
             </NavLink>
           </div>
           <div className="like">
+            {!inFav.length || (
+              <div className="selected_length">
+                <p>{inFav.length}</p>
+              </div>
+            )}
             <NavLink to="/profile/favorite">
               <HeartIcon />
             </NavLink>

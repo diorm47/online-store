@@ -19,13 +19,14 @@
   justify-content: space-between;
   margin-bottom: 25px;
   outline: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .card_item:hover {
   box-shadow: -1px 0px 17px 3px rgba(0, 0, 0, 0.18);
   -webkit-box-shadow: -1px 0px 17px 3px rgba(0, 0, 0, 0.18);
   -moz-box-shadow: -1px 0px 17px 3px rgba(0, 0, 0, 0.18);
+   transition: all 0.4s ease;
 }
 
 .card_image {
@@ -34,8 +35,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  outline: none;
+  overflow: hidden;
   position: relative;
+  transition: all 0.4s ease;
+}
+.card_image:hover img {
+  transform: scale(1.1);
+  transition: all 0.4s ease;
 }
 
 .card_descr {
@@ -69,6 +75,7 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
+  z-index: 121;
 }
 
 .addto_favvor {
@@ -100,6 +107,15 @@
   letter-spacing: 0.2px;
   color: #000000;
   margin-right: 17px;
+}
+.addedd_to_cart {
+  background: #ed165f;
+}
+.addedd_to_cart p {
+  color: #ffffff;
+}
+.addedd_to_cart svg * {
+  fill: #fff;
 }
 
 .card_image .onmouse_over {

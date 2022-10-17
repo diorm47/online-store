@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 code {
@@ -20,4 +21,16 @@ code {
 
 a {
   text-decoration: none;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+span,
+input,
+img,
+select {
+  user-select: none;
 }
