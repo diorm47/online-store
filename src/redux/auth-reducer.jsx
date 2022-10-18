@@ -1,10 +1,11 @@
 const CREATE_ACCOUNT = "CREATE_ACCOUNT";
 const AUTH_USER = "AUTH_USER";
+const AUTHORIZED = "AUTHORIZED";
 
 let initialState = {
   email: null,
   password: null,
-  isAuth: true,
+  isAuth: false,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -24,6 +25,12 @@ const authReducer = (state = initialState, action) => {
         password: (state.password = action.payload),
       };
 
+    case AUTHORIZED:
+      return {
+        ...state,
+        isAuth: (state.isAuth = action.payload),
+      };
+
     default:
       return state;
   }
@@ -40,12 +47,12 @@ export const login = (payload) => {
     type: AUTH_USER,
     payload,
   };
-}
-
-export const getAuthUserData = () => async (dispatch) => {};
-
-
-
-export const logout = () => async (dispatch) => {};
+};
+export const setAuthorized = (payload) => {
+  return {
+    type: AUTHORIZED,
+    payload,
+  };
+};
 
 export default authReducer;

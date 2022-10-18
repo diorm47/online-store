@@ -53,8 +53,10 @@ const Shoes = () => {
   const filterCategory = (key) => {
     const data = shoesData.filter((el) => el.type === key);
     dispatch(filteredItem(data));
+    if (key === "all") {
+      dispatch(filteredItem(shoesData));
+    }
   };
-  console.log(filteredItems);
 
   return (
     <div className="base">
@@ -184,7 +186,9 @@ const Shoes = () => {
                 <input type="text" placeholder="₦" />
                 <p> to </p>
                 <input type="text" placeholder="₦" />
-                <input type="button" value="Apply" className="apply_button" />
+                <div className="apply_button">
+                  <input type="button" value="Apply" />
+                </div>{" "}
               </div>
             </div>
           </div>
@@ -200,7 +204,10 @@ const Shoes = () => {
             <div className="black_line"></div>
 
             <div className="product_content">
-              <Pagination itemsPerPage={12} items={shoesData} />
+              <Pagination
+                itemsPerPage={12}
+                items={filteredItems.length >= 1 ? filteredItems : shoesData}
+              />
             </div>
           </div>
         </div>

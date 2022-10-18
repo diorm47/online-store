@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import Error404 from "./components/error/error";
@@ -7,6 +7,7 @@ import Footer from "./components/footer/footer";
 import Loader from "./components/loader/loader";
 import Navbar from "./components/nav-bar/nav-bar";
 import Search from "./components/search/search";
+import { setAuthorized } from "./redux/auth-reducer";
 
 const HomePage = React.lazy(() => import("./pages/home-page/home-page"));
 const ShoesPage = React.lazy(() => import("./pages/shoes-page/shoes-page"));
@@ -24,6 +25,11 @@ const Cart = React.lazy(() => import("./pages/added-to-cart/cart"));
 
 function App() {
   const serchingItem = useSelector((state) => state.search.searched);
+  const dispatch = useDispatch();
+
+  if (localStorage.getItem("authorized")) {
+    dispatch(setAuthorized(true));
+  }
 
   return (
     <div className="main_wrapper">

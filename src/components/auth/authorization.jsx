@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import "./auth.css";
-import { createAccount, login } from "../../redux/auth-reducer";
+import { createAccount, login, setAuthorized } from "../../redux/auth-reducer";
 
 const Auth = () => {
   const [formType, setFormType] = useState(false);
@@ -16,7 +16,7 @@ const Auth = () => {
   const onSubmit = (data) => {
     let email = data.email;
     if (data.confirm_password === data.create_password) {
-      localStorage.setItem(data.email, JSON.stringify(data));
+      localStorage.setItem("authorized", JSON.stringify(data));
       dispatch(createAccount(email));
     } else {
       alert("Created and Confirmed Passwords are not similar!");
@@ -24,9 +24,13 @@ const Auth = () => {
   };
 
   const onAuthorize = (data) => {
-    localStorage.setItem(data.email, JSON.stringify(data));
+    localStorage.setItem("authorized", JSON.stringify(data));
     dispatch(login(data));
   };
+
+  if (localStorage.getItem("authorized")) {
+    dispatch(setAuthorized(true));
+  }
 
   return (
     <div className="profile">

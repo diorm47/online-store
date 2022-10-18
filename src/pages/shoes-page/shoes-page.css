@@ -191,18 +191,19 @@ h2 {
   text-indent: 5px;
 }
 
-.apply_button {
+.apply_button input {
   width: 67px;
   height: 27px;
-  background: #a8325a;
+  background: #ed165f;
   border-radius: 2px;
   margin-left: 16px;
-  border: white;
+  border: none;
   font-weight: 300;
   font-size: 14px;
   cursor: pointer;
   color: #ffffff;
 }
+
 
 .products_part .black_line {
   width: 990px;

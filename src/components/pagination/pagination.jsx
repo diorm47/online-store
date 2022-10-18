@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import Cards from "../cards/cards";
-import "./pagination.css";
 import ScrollButton from "./../scroll-button/scroll-button";
+import "./pagination.css";
 
-function Pagination({ itemsPerPage, items, dropValue }) {
+function Pagination({ itemsPerPage, items }) {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);

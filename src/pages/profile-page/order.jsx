@@ -5,7 +5,10 @@ const Order = () => {
   let orderedItem = localStorage.getItem("ordered");
   orderedItem = JSON.parse(orderedItem);
 
-  const adress = orderedItem.shipping_adress;
+  let adress;
+  if (orderedItem.shipping_adress) {
+    adress = orderedItem.shipping_adress;
+  }
 
   return (
     <div className="order_block">

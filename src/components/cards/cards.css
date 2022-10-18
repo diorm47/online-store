@@ -26,7 +26,7 @@
   box-shadow: -1px 0px 17px 3px rgba(0, 0, 0, 0.18);
   -webkit-box-shadow: -1px 0px 17px 3px rgba(0, 0, 0, 0.18);
   -moz-box-shadow: -1px 0px 17px 3px rgba(0, 0, 0, 0.18);
-   transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .card_image {
@@ -41,6 +41,11 @@
 }
 .card_image:hover img {
   transform: scale(1.1);
+  transition: all 0.4s ease;
+  filter: brightness(70%);
+}
+.card_image:hover {
+  background: rgba(0, 0, 0, 0.3);
   transition: all 0.4s ease;
 }
 
@@ -119,10 +124,11 @@
 }
 
 .card_image .onmouse_over {
-  display: none;
+  visibility: hidden;
 }
 .card_image:hover .onmouse_over {
-  display: flex;
+  visibility: visible;
+  transition: all 0.4s ease;
 }
 
 .addto_favvor .selectedC * {

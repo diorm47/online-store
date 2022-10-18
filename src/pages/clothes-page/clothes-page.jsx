@@ -137,10 +137,12 @@ const Clothes = () => {
                 </div>
               </div>
               <div className="price_filterer">
-                <input type="text" placeholder="₦" />
+                <input type="number" placeholder="₦" />
                 <p> to </p>
-                <input type="text" placeholder="₦" />
-                <input type="button" value="Apply" className="apply_button" />
+                <input type="number" placeholder="₦" />
+                <div className="apply_button">
+                  <input type="button" value="Apply" />
+                </div>
               </div>
             </div>
           </div>

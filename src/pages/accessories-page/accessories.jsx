@@ -135,7 +135,9 @@ const Accessories = () => {
                 <input type="text" placeholder="₦" />
                 <p> to </p>
                 <input type="text" placeholder="₦" />
-                <input type="button" value="Apply" className="apply_button" />
+                <div className="apply_button">
+                  <input type="button" value="Apply" />
+                </div>
               </div>
             </div>
           </div>

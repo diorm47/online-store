@@ -49,7 +49,7 @@ function Checkout() {
             </div>
             <div className="delivery_desc">
               <input defaultChecked type="radio" />
-              <p>₦ {(inCart.length + qtyCalc) * 100} </p>
+              <p>₦ 100 </p>
               <p>Delivery fee</p>
               <p>Door delivery</p>
             </div>

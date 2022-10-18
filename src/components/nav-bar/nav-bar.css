@@ -70,7 +70,7 @@ label {
 .nav_list .active,
 .dot:hover {
   background-color: transparent;
-  text-decoration: underline #ed165f;
+
   color: #ed165f;
 }
 

@@ -1,17 +1,23 @@
 import React from "react";
 import { Carousel } from "react-carousel-minimal";
+import { useDispatch } from "react-redux";
 import arrow_down from "../../assets/icons/arrow_down.png";
 import girl_background from "../../assets/icons/girl_background.png";
+import { setAuthorized } from "../../redux/auth-reducer";
 import Pagination from "./../../components/pagination/pagination";
 import { carouselData, homeData } from "./../../redux/data";
 import "./home-page.css";
 
 const HomePage = () => {
-  const scrollToUp = () => {
-    window.scrollTo({
-      behavior: "smooth",
-    });
+  const dispatch = useDispatch();
+  const ref = React.useRef(null);
+  const scrollToUp = (ref) => {
+    ref.current.scrollIntoView();
   };
+
+  if (localStorage.getItem("authorized")) {
+    dispatch(setAuthorized(true));
+  }
   return (
     <div className="home_page">
       <header>
@@ -43,14 +49,14 @@ const HomePage = () => {
           </div>
           <div className="arrow_down">
             <h4>Explore our collection</h4>
-            <div className="down_arrow" onClick={scrollToUp}>
+            <div className="down_arrow" onClick={() => scrollToUp(ref)}>
               <img src={arrow_down} alt="down_arrow" />
             </div>
           </div>
         </div>
       </header>
 
-      <div className="cards_block">
+      <div className="cards_block" ref={ref}>
         <div className="card_block_text">
           <div className="block_title">
             <div className="left_line"></div>

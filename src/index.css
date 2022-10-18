@@ -34,3 +34,14 @@ img,
 select {
   user-select: none;
 }
+
+a,
+p,
+div,
+button,
+span,
+input,
+svg,
+img {
+  -webkit-tap-highlight-color: transparent;
+}
