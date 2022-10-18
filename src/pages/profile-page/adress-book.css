@@ -56,3 +56,21 @@
 .default_adress_notice {
   margin-bottom: 32px;
 }
+
+@media only screen and (max-width: 570px) {
+  .adress_block .adress_form {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .setFormButton input {
+    width: 161px;
+    height: 37px;
+    font-size: 10px;
+  }
+
+  .adress_block .adress_form {
+    width: 98%;
+  }
+}
