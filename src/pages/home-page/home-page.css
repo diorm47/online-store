@@ -9,12 +9,10 @@
 
 .home_page_wrapper {
   width: 1150px;
-  /* height: 1190px; */
 }
 header {
   background: #ed165f;
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,6 +118,22 @@ header {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
 }
+.mobile_image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  position: relative;
+}
+
+.mobile_image img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 11;
+}
 
 @media only screen and (max-width: 1340px) {
   .card_items .items {
@@ -135,6 +149,20 @@ header {
   .items .card_item {
     margin: 0 auto;
   }
+  .cards_description {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 1220px) {
+  .left_line,
+  .right_line {
+    display: none;
+  }
+  .block_title {
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 950px) {
@@ -143,14 +171,27 @@ header {
     margin: 0 auto;
   }
 }
-@media only screen and (max-width: 950px) {
+
+@media only screen and (max-width: 600px) {
   .card_items .items {
     grid-template-columns: repeat(1, 1fr);
+    margin: 0 auto;
   }
-}
 
-@media only screen and (max-width: 500px) {
-  .carousel-image {
-    width: 400px;
+  .carousel {
+    display: none;
+  }
+  .mobile_image {
+    display: flex;
+  }
+  .arrow_down {
+    margin: 30px 0;
+  }
+  .arrow_down h4 {
+    font-size: 20px;
+  }
+
+  .cards_description p {
+    font-size: 18px;
   }
 }

@@ -1,6 +1,7 @@
 import { homeData } from "./../../redux/data";
 import Pagination from "../../components/pagination/pagination";
 import "./clothes-page.css";
+import "../../components/utils/colors.css"
 
 const Clothes = () => {
   return (

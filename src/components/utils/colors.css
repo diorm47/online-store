@@ -1,0 +1,43 @@
+.color_button .belge {
+  background: #f3ecdb;
+}
+.color_button .blue {
+  background: blue;
+  margin-left: 12px;
+}
+.color_button .black {
+  background: black;
+  margin-left: 10px;
+}
+.color_button .orange {
+  background: orange;
+}
+.color_button .green {
+  background: green;
+}
+.color_button .brown {
+  background: brown;
+}
+.color_button .purple {
+  background: purple;
+}
+.color_button .gold {
+  background: gold;
+  margin-left: 5px;
+}
+.color_button .taupe {
+  background: #cac1b8;
+  margin-left: 7px;
+}
+.color_button .white {
+  background: white;
+  border: 0.5px solid #000000;
+}
+.color_button .pink {
+  background: pink;
+  margin-left: 7px;
+}
+.color_button .red {
+  background: red;
+  margin-left: 10px;
+}

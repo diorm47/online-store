@@ -7,6 +7,7 @@ import { setAuthorized } from "../../redux/auth-reducer";
 import Pagination from "./../../components/pagination/pagination";
 import { carouselData, homeData } from "./../../redux/data";
 import "./home-page.css";
+import girl from "../../assets/images/main_girl.png";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,9 @@ const HomePage = () => {
         <div className="home_page_wrapper">
           <div className="background_logo">
             <img src={girl_background} alt="Background logo" />
+          </div>
+          <div className="mobile_image">
+            <img src={girl} alt="girl" />
           </div>
           <div className="carousel">
             <Carousel

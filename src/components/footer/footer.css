@@ -118,3 +118,23 @@ div {
     display: none;
   }
 }
+
+@media only screen and (max-width: 440px) {
+  .about_block {
+    flex-direction: column;
+    align-items: center;
+  }
+  .socials {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .socials .facebook_img {
+    margin-right: 10px;
+  }
+  .subscribe {
+    display: none;
+  }
+  .email_adress br {
+    display: block;
+  }
+}
