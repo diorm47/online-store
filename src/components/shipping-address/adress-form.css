@@ -57,5 +57,41 @@ textarea {
 }
 
 .adress_form_wrapper span {
-    color: red;
+  color: red;
+}
+
+@media only screen and (max-width: 470px) {
+  .adress_form {
+    height: 100%;
+  }
+  .adress_form .adress_form_wrapper form input,
+  select,
+  textarea,
+  option {
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .adress_form_wrapper h3 {
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .adress_form_wrapper form p {
+    margin-bottom: 8px;
+  }
+  .adress_form_wrapper .set_default {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .adress_form .adress_form_wrapper form .set_default .set_default_input {
+    width: 20px;
+  }
+  .set_default p {
+    margin: 0;
+    margin-top: 8px;
+    font-size: 13px;
+  }
 }

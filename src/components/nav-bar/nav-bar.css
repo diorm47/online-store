@@ -130,6 +130,9 @@ label {
   font-size: 10px;
   color: #fff;
 }
+.nav_logo_mobile {
+  display: none;
+}
 
 @media only screen and (max-width: 1200px) {
   .navbar {
@@ -176,7 +179,7 @@ label {
   .navbar {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
   .menu_icon,
   .menu_close {
@@ -185,5 +188,14 @@ label {
   .hide_menu {
     transform: translateX(-1000px);
     transition: all 0.9s ease;
+  }
+  .nav_logo_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav_logo_mobile .active {
+    background: transparent;
+    cursor: pointer;
   }
 }

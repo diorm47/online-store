@@ -49,7 +49,9 @@ const AddedToCart = () => {
   return (
     <div className="added_cart">
       <div className="added_wrapper">
-        <h1>Shopping Cart ({inCart.length} item ) </h1>
+        <h1>
+          Shopping Cart ({inCart.length} {inCart.length > 1 ? "items" : "item"}){" "}
+        </h1>
 
         {inCart.length ? (
           <>
@@ -76,6 +78,9 @@ const AddedToCart = () => {
                     </div>
                     <div className="item_desc">
                       <h4>{item.description}</h4>
+                      <div className="mobile_datas">
+                        <p>Price ₦{item.price}</p>
+                      </div>
                       <div className="actions">
                         <div
                           className="to_favorite"

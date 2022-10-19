@@ -26,6 +26,11 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
+      <div className="nav_logo_mobile">
+      <NavLink to="/home">
+            <img src={main_logo} alt="Navbar logo" />
+          </NavLink>
+      </div>
       <div className={menuActive ? "nav_wrapper  " : "nav_wrapper hide_menu"}  onClick={() => setActive(false)}>
         <div className="nav_list">
           <div className="home">
