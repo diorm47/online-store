@@ -48,8 +48,11 @@ function Checkout() {
               <p>Delivery method</p>
             </div>
             <div className="delivery_desc">
-              <input defaultChecked type="radio" />
-              <p>₦ 100 </p>
+              <div className="del_fee">
+                <input defaultChecked type="radio" />
+                <p>₦ 100 </p>
+              </div>
+
               <p>Delivery fee</p>
               <p>Door delivery</p>
             </div>

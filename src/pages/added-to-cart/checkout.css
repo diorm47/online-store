@@ -368,3 +368,122 @@
 .total_sum span {
   color: #ed165f;
 }
+.del_fee {
+  display: flex;
+}
+.sum_calculs p {
+  margin: 0;
+}
+.sum_calculs div {
+  margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .checkout_wrapper .adress_form {
+    display: none;
+  }
+  .checkout_wrapper {
+    justify-content: center;
+  }
+  .checkout_wrapper .delivery_payment,
+  .delivery_method,
+  .payment_method {
+    margin: 0 10px;
+  }
+  .delivery_method {
+    margin-bottom: 30px;
+  }
+  .order_summary,
+  .summary_block {
+    max-width: 425px;
+  }
+  .delivery_payment {
+    max-width: 445px;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .checkout_wrapper {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .delivery_payment {
+    width: 50%;
+  }
+
+  .order_summary {
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 15px;
+  }
+  .place_order_btn {
+    width: 100%;
+  }
+  .delivery_method {
+    width: 100%;
+  }
+  .payment_method {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .delivery_method,
+  .payment_method {
+    padding: 30px 0 0 20px;
+  }
+  .payment_method {
+    padding-right: 10px;
+  }
+  .delivery_desc {
+    flex-direction: column;
+  }
+  .del_fee p {
+    margin-bottom: 4px;
+  }
+  .del_fee input {
+    margin-bottom: 4px;
+    margin-right: 3px;
+  }
+  .gift_quest {
+    margin-bottom: 25px;
+  }
+  .check_right .items_desc h4 {
+    font-size: 15px;
+  }
+  .summary_block {
+    padding-top: 30px;
+  }
+  .order_title {
+    margin-bottom: 10px;
+  }
+  .title_checkbox ul li {
+    line-height: 10px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .checkout_wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .delivery_payment,
+  .order_summary {
+    width: 80%;
+    margin: 10px 0;
+  }
+  .delivery_method,
+  .payment_method {
+    margin: 0;
+  }
+  .delivery_method {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .delivery_payment,
+  .order_summary {
+    width: 95%;
+  }
+}

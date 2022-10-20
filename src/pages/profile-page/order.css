@@ -1,5 +1,5 @@
 .ordered_itm {
-  width: 968px;
+  max-width: 968px;
   height: 192px;
   display: flex;
   align-items: center;
@@ -118,4 +118,63 @@
 
 .delivery_shipment p {
   line-height: 20px;
+}
+
+@media only screen and (max-width: 1170px) {
+  .ordered_itm .ordered_item_inf,
+  .item_payments,
+  .delivery_shipment {
+    padding: 15px;
+    padding-top: 25px;
+  }
+
+  .ordered_itm .ordered_item_inf h3,
+  .item_payments h3,
+  .delivery_shipment h3 {
+    font-size: 15px;
+  }
+
+  .ordered_itm .ordered_item_inf p,
+  .item_payments p,
+  .delivery_shipment p {
+    font-size: 12px;
+  }
+  .qty_del span {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .ordered_itm .ordered_item_inf h3,
+  .item_payments h3,
+  .delivery_shipment h3 {
+    font-size: 12px;
+  }
+
+  .ordered_itm .ordered_item_inf p,
+  .item_payments p,
+  .delivery_shipment p {
+    font-size: 9px;
+  }
+  .item_inf {
+    margin-left: 14px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .ordered_itm {
+    flex-direction: column;
+  }
+  .ordered_items,
+  .ordered_itm {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ordered_itm .ordered_item_inf,
+  .item_payments,
+  .delivery_shipment {
+    width: 100%;
+    height: 100%;
+  }
 }

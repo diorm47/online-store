@@ -9,8 +9,10 @@ import { deleteFromCart } from "../../redux/cart-reducer";
 import { addToFavorite } from "../../redux/favorite-reducer";
 import { NavLink } from "react-router-dom";
 import Auth from "./../../components/auth/authorization";
+import { useNavigate } from "react-router";
 
 const AddedToCart = () => {
+  const navigate = useNavigate();
   const inCart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
   const [snackbar, setSnackbar] = useState(false);
@@ -126,7 +128,7 @@ const AddedToCart = () => {
                 <p>Delivery fee not included yet</p>
               </div>
               <div className="shopping_actions">
-                <div className="continue_btn">
+                <div className="continue_btn" onClick={() => navigate(-1)}>
                   <p>CONTINUE SHOPPING</p>
                 </div>
                 <div className="checkout_btn">
