@@ -2,11 +2,11 @@ import React from "react";
 import "./order.css";
 
 const Order = () => {
-  let orderedItem = localStorage.getItem("ordered");
-  orderedItem = JSON.parse(orderedItem);
-
+  let orderedItem;
   let adress;
-  if (orderedItem.shipping_adress) {
+  if (localStorage.getItem("ordered")) {
+    orderedItem = localStorage.getItem("ordered");
+    orderedItem = JSON.parse(orderedItem);
     adress = orderedItem.shipping_adress;
   }
 

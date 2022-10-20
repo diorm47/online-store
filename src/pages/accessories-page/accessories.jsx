@@ -2,6 +2,7 @@ import React from "react";
 import { accessoriesData } from "../../redux/data";
 import Pagination from "../../components/pagination/pagination";
 import "./accessories.css";
+import "../../components/utils/colors.css"
 
 const Accessories = () => {
   return (

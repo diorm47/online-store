@@ -13,7 +13,12 @@
   display: flex;
   justify-content: space-between;
 }
-
+.categories_list p {
+  cursor: pointer;
+}
+.categories_list .active {
+  color: #ed165f;
+}
 .base_title h1 {
   font-weight: 800;
   font-size: 30px;
@@ -157,6 +162,9 @@ h2 {
   font-size: 14px;
   cursor: pointer;
   color: #ffffff;
+}
+.products_part {
+  width: 100%;
 }
 
 .products_part .black_line {

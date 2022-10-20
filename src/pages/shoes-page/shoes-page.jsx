@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Pagination from "../../components/pagination/pagination";
 import { filteredItem } from "../../redux/search-reducer";
 import { shoesData } from "./../../redux/data";
 import "./shoes-page.css";
+import "../../components/utils/colors.css";
 
 const Shoes = () => {
   const categories = [
@@ -47,12 +48,15 @@ const Shoes = () => {
       key: "oxfords",
     },
   ];
+
+  const [active, setActive] = useState("all");
   const dispatch = useDispatch();
   const filteredItems = useSelector((state) => state.search.filtered);
 
   const filterCategory = (key) => {
     const data = shoesData.filter((el) => el.type === key);
     dispatch(filteredItem(data));
+    setActive(key);
     if (key === "all") {
       dispatch(filteredItem(shoesData));
     }
@@ -73,6 +77,7 @@ const Shoes = () => {
                 <div className="categories_list">
                   {categories.map((category) => (
                     <p
+                      className={active === category.key ? "active" : ""}
                       onClick={() => filterCategory(category.key)}
                       key={category.key}
                     >
