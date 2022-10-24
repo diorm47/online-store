@@ -1,9 +1,189 @@
 import { homeData } from "./../../redux/data";
 import Pagination from "../../components/pagination/pagination";
 import "./clothes-page.css";
-import "../../components/utils/colors.css"
+import "../../components/utils/colors.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { filteredItem } from "../../redux/search-reducer";
+import { ReactComponent as ClearIcon } from "../../assets/icons/clear_icon.svg";
+import Cards from "../../components/cards/cards";
 
 const Clothes = () => {
+  const filteredItems = useSelector((state) => state.search.filtered);
+  const dispatch = useDispatch();
+
+  const categories = [
+    {
+      key: "all",
+    },
+    {
+      key: "dresses",
+    },
+    {
+      key: "denim",
+    },
+    {
+      key: "jeans",
+    },
+    {
+      key: "jumpsuits",
+    },
+    {
+      key: "tops",
+    },
+    {
+      key: "jackets and coats",
+    },
+    {
+      key: "pants",
+    },
+    {
+      key: "shorts",
+    },
+    {
+      key: "skirts",
+    },
+    {
+      key: "loungerie & underwear",
+    },
+    {
+      key: "leather",
+    },
+    {
+      key: "sweaters & knits",
+    },
+  ];
+  const sizeCategories = [
+    {
+      key: "xxs",
+    },
+    {
+      key: "xs",
+    },
+    {
+      key: "s",
+    },
+    {
+      key: "m",
+    },
+    {
+      key: "l",
+    },
+    {
+      key: "xl",
+    },
+    {
+      key: "23",
+    },
+    {
+      key: "24",
+    },
+    {
+      key: "25",
+    },
+    {
+      key: "26",
+    },
+    {
+      key: "27",
+    },
+    {
+      key: "28",
+    },
+    {
+      key: "29",
+    },
+    {
+      key: "30",
+    },
+    {
+      key: "31",
+    },
+    {
+      key: "32",
+    },
+  ];
+  const colorCategories = [
+    {
+      key: "belge",
+    },
+    {
+      key: "blue",
+    },
+    {
+      key: "black",
+    },
+    {
+      key: "orange",
+    },
+    {
+      key: "green",
+    },
+    {
+      key: "brown",
+    },
+    {
+      key: "purple",
+    },
+    {
+      key: "gold",
+    },
+    {
+      key: "taupe",
+    },
+    {
+      key: "white",
+    },
+    {
+      key: "pink",
+    },
+    {
+      key: "red",
+    },
+  ];
+
+  const [active, setActive] = useState("all");
+  const [activeSize, setActiveSize] = useState("");
+  const [visibCategList, setVisibilityList] = useState(false);
+  const [activeColor, setActiveColor] = useState("");
+
+  const toggleCatList = () => {
+    setVisibilityList(true);
+
+    if (visibCategList) {
+      setVisibilityList(false);
+    }
+  };
+
+  const filterCategory = (key) => {
+    const data = homeData.filter((el) => el.category === key);
+    dispatch(filteredItem(data));
+    setActive(key);
+    if (key === "all") {
+      dispatch(filteredItem({}));
+    }
+  };
+  const clearFilters = () => {
+    setActive("all");
+    dispatch(filteredItem({}));
+  };
+
+  const filterSize = (key) => {
+    const data = homeData.filter((el) => el.size === key);
+    dispatch(filteredItem(data));
+    setActiveSize(key);
+  };
+  const clearSizeFilters = () => {
+    setActiveSize("");
+    dispatch(filteredItem({}));
+  };
+
+  const filterColor = (key) => {
+    const data = homeData.filter((el) => el.color === key);
+    dispatch(filteredItem(data));
+    setActiveColor(key);
+  };
+
   return (
     <div className="base">
       <div className="base_wrapper">
@@ -14,101 +194,93 @@ const Clothes = () => {
           <div className="filter_part">
             <div className="category">
               <div className="categories">
-                <h2>CATEGORY</h2>
+                <div className="cat_title" onClick={toggleCatList}>
+                  <h2>CATEGORY</h2>
+                  <div
+                    onClick={() => clearFilters()}
+                    className={
+                      active !== "all" ? "clear_filter" : "clear_filter_hided"
+                    }
+                  >
+                    <p>CLEAR</p>
+                    <ClearIcon />
+                  </div>
+                </div>
+
                 <div className="black_line"></div>
-                <div className="categories_list">
-                  <a href="#">All</a>
-                  <a href="#">Dresses</a>
-                  <a href="#">Denim</a>
-                  <a href="#">Jeans</a>
-                  <a href="#">Jumpsuits</a>
-                  <a href="#">Tops</a>
-                  <a href="#">Jackets and coats</a>
-                  <a href="#">Pants</a>
-                  <a href="#">Shorts</a>
-                  <a href="#">Skirts</a>
-                  <a href="#">Loungerie & underwear</a>
-                  <a href="#">Leather</a>
-                  <a href="#">Sweaters & knits</a>
+                <div
+                  className={visibCategList ? "categories_list" : " hided_list"}
+                >
+                  {categories.map((category) => (
+                    <p
+                      className={active === category.key ? "active" : ""}
+                      onClick={() => filterCategory(category.key)}
+                      key={category.key}
+                    >
+                      {category.key}
+                    </p>
+                  ))}
                 </div>
               </div>
             </div>
 
             <div className="size">
-              <h2>SIZE</h2>
+              <div className="size_title">
+                <h2>SIZE</h2>
+                <div
+                  onClick={() => clearSizeFilters()}
+                  className={
+                    activeSize !== "" ? "clear_filter" : "clear_filter_hided"
+                  }
+                >
+                  <p>CLEAR</p>
+                  <ClearIcon />
+                </div>
+              </div>
               <div className="black_line"></div>
               <div className="sizes_block">
-                <div className="size_button">XXS</div>
-                <div className="size_button">XS</div>
-                <div className="size_button">S</div>
-                <div className="size_button">M</div>
-                <div className="size_button">L</div>
-                <div className="size_button">XL</div>
-                <div className="size_button">23</div>
-                <div className="size_button">24</div>
-                <div className="size_button">25</div>
-                <div className="size_button">26</div>
-                <div className="size_button">27</div>
-                <div className="size_button">28</div>
-                <div className="size_button">29</div>
-                <div className="size_button">30</div>
-                <div className="size_button">31</div>
-                <div className="size_button">32</div>
+                {sizeCategories.map((size) => (
+                  <div
+                    onClick={() => filterSize(size.key)}
+                    className={
+                      activeSize === size.key
+                        ? "size_button_shoes activeSize"
+                        : "size_button_shoes"
+                    }
+                    key={size.key}
+                  >
+                    <p>{size.key}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
             <div className="colors">
-              <h2>COLOR</h2>
+              <div className="colors_title">
+                <h2>COLOR</h2>
+                <div
+                  onClick={() => clearSizeFilters()}
+                  className={
+                    activeColor !== "" ? "clear_filter" : "clear_filter_hided"
+                  }
+                >
+                  <p>CLEAR</p>
+                  <ClearIcon />
+                </div>
+              </div>
+
               <div className="black_line"></div>
               <div className="colors_block">
-                <div className="color_button">
-                  <div className="belge"></div>
-                  <p className="descri">Belge</p>
-                </div>
-                <div className="color_button">
-                  <div className="blue"></div>
-                  <p className="descri">Blue</p>
-                </div>
-                <div className="color_button">
-                  <div className="black"></div>
-                  <p className="descri">Black</p>
-                </div>
-                <div className="color_button">
-                  <div className="orange"></div>
-                  <p className="descri">Orange</p>
-                </div>
-                <div className="color_button">
-                  <div className="green"></div>
-                  <p className="descri">Green</p>
-                </div>
-                <div className="color_button">
-                  <div className="brown"></div>
-                  <p className="descri">Brown</p>
-                </div>
-                <div className="color_button">
-                  <div className="purple"></div>
-                  <p className="descri">Purple</p>
-                </div>
-                <div className="color_button">
-                  <div className="gold"></div>
-                  <p className="descri">Gold</p>
-                </div>
-                <div className="color_button">
-                  <div className="taupe"></div>
-                  <p className="descri">Taupe</p>
-                </div>
-                <div className="color_button">
-                  <div className="white"></div>
-                  <p className="descri">White</p>
-                </div>
-                <div className="color_button">
-                  <div className="pink"></div>
-                  <p className="descri">Pink</p>
-                </div>
-                <div className="color_button">
-                  <div className="red"></div>
-                  <p className="descri">Red</p>
-                </div>
+                {colorCategories.map((color) => (
+                  <div
+                    className="color_button"
+                    key={color.key}
+                    onClick={() => filterColor(color.key)}
+                  >
+                    <div className={color.key}></div>
+                    <p className="descri">{color.key}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -159,7 +331,13 @@ const Clothes = () => {
             <div className="black_line"></div>
 
             <div className="product_content">
-              <Pagination itemsPerPage={12} items={homeData} />
+              {filteredItems.length >= 1 ? (
+                <div className="items">
+                  <Cards carts_data={filteredItems} />
+                </div>
+              ) : (
+                <Pagination itemsPerPage={12} items={homeData} />
+              )}
             </div>
           </div>
         </div>

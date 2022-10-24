@@ -32,7 +32,7 @@ const HomePage = () => {
           <div className="carousel">
             <Carousel
               data={carouselData}
-              time={4000}
+              time={3000}
               width="100%"
               height="100%"
               slideNumber={false}

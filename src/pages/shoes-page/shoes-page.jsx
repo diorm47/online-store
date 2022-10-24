@@ -5,8 +5,14 @@ import { filteredItem } from "../../redux/search-reducer";
 import { shoesData } from "./../../redux/data";
 import "./shoes-page.css";
 import "../../components/utils/colors.css";
+import Cards from "../../components/cards/cards";
+
+import { ReactComponent as ClearIcon } from "../../assets/icons/clear_icon.svg";
 
 const Shoes = () => {
+  const filteredItems = useSelector((state) => state.search.filtered);
+  const dispatch = useDispatch();
+
   const categories = [
     {
       key: "all",
@@ -48,18 +54,123 @@ const Shoes = () => {
       key: "oxfords",
     },
   ];
+  const sizeCategories = [
+    {
+      key: "35.5/5",
+    },
+    {
+      key: "36/5.5",
+    },
+    {
+      key: "37.5/6.5",
+    },
+    {
+      key: "38/7",
+    },
+    {
+      key: "39/7.5",
+    },
+    {
+      key: "39.5/8",
+    },
+    {
+      key: "40/7.5",
+    },
+    {
+      key: "41/9.5",
+    },
+    {
+      key: "41.5/10",
+    },
+    {
+      key: "42/10.5",
+    },
+    {
+      key: "42/11",
+    },
+    {
+      key: "43/12",
+    },
+  ];
+  const colorCategories = [
+    {
+      key: "belge",
+    },
+    {
+      key: "blue",
+    },
+    {
+      key: "black",
+    },
+    {
+      key: "orange",
+    },
+    {
+      key: "green",
+    },
+    {
+      key: "brown",
+    },
+    {
+      key: "purple",
+    },
+    {
+      key: "gold",
+    },
+    {
+      key: "taupe",
+    },
+    {
+      key: "white",
+    },
+    {
+      key: "pink",
+    },
+    {
+      key: "red",
+    },
+  ];
 
   const [active, setActive] = useState("all");
-  const dispatch = useDispatch();
-  const filteredItems = useSelector((state) => state.search.filtered);
+  const [activeSize, setActiveSize] = useState("");
+  const [activeColor, setActiveColor] = useState("");
+  const [visibCategList, setVisibilityList] = useState(false);
+
+  const toggleCatList = () => {
+    setVisibilityList(true);
+
+    if (visibCategList) {
+      setVisibilityList(false);
+    }
+  };
 
   const filterCategory = (key) => {
     const data = shoesData.filter((el) => el.type === key);
     dispatch(filteredItem(data));
     setActive(key);
     if (key === "all") {
-      dispatch(filteredItem(shoesData));
+      dispatch(filteredItem({}));
     }
+  };
+  const clearFilters = () => {
+    setActive("all");
+    dispatch(filteredItem({}));
+  };
+
+  const filterSize = (key) => {
+    const data = shoesData.filter((el) => el.size === key);
+    dispatch(filteredItem(data));
+    setActiveSize(key);
+  };
+  const clearSizeFilters = () => {
+    setActiveSize("");
+    dispatch(filteredItem({}));
+  };
+
+  const filterColor = (key) => {
+    const data = shoesData.filter((el) => el.color === key);
+    dispatch(filteredItem(data));
+    setActiveColor(key);
   };
 
   return (
@@ -72,9 +183,23 @@ const Shoes = () => {
           <div className="filter_part">
             <div className="category">
               <div className="categories">
-                <h2>CATEGORY</h2>
+                <div className="cat_title" onClick={toggleCatList}>
+                  <h2>CATEGORY</h2>
+                  <div
+                    onClick={() => clearFilters()}
+                    className={
+                      active !== "all" ? "clear_filter" : "clear_filter_hided"
+                    }
+                  >
+                    <p>CLEAR</p>
+                    <ClearIcon />
+                  </div>
+                </div>
+
                 <div className="black_line"></div>
-                <div className="categories_list">
+                <div
+                  className={visibCategList ? "categories_list" : " hided_list"}
+                >
                   {categories.map((category) => (
                     <p
                       className={active === category.key ? "active" : ""}
@@ -89,76 +214,65 @@ const Shoes = () => {
             </div>
 
             <div className="size">
-              <h2>SIZE</h2>
+              <div className="size_title">
+                <h2>
+                  SIZE - <span>EU/US</span>{" "}
+                </h2>
+                <div
+                  onClick={() => clearSizeFilters()}
+                  className={
+                    activeSize !== "" ? "clear_filter" : "clear_filter_hided"
+                  }
+                >
+                  <p>CLEAR</p>
+                  <ClearIcon />
+                </div>
+              </div>
+
               <div className="black_line"></div>
               <div className="sizes_block">
-                <div className="size_button">35.5/5</div>
-                <div className="size_button">36/5.5</div>
-                <div className="size_button">37.5/6.5</div>
-                <div className="size_button">38/7</div>
-                <div className="size_button">39/7.5</div>
-                <div className="size_button">39.5/8</div>
-                <div className="size_button">40/7.5</div>
-                <div className="size_button">41/9.5</div>
-                <div className="size_button">41.5/10</div>
-                <div className="size_button">42/10.5</div>
-                <div className="size_button">42/11</div>
-                <div className="size_button">43/12</div>
+                {sizeCategories.map((size) => (
+                  <div
+                    onClick={() => filterSize(size.key)}
+                    className={
+                      activeSize === size.key
+                        ? "size_button_shoes activeSize"
+                        : "size_button_shoes"
+                    }
+                    key={size.key}
+                  >
+                    <p>{size.key}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
             <div className="colors">
-              <h2>COLOR</h2>
+              <div className="colors_title">
+                <h2>COLOR</h2>
+                <div
+                  onClick={() => clearSizeFilters()}
+                  className={
+                    activeColor !== "" ? "clear_filter" : "clear_filter_hided"
+                  }
+                >
+                  <p>CLEAR</p>
+                  <ClearIcon />
+                </div>
+              </div>
+
               <div className="black_line"></div>
               <div className="colors_block">
-                <div className="color_button">
-                  <div className="belge"></div>
-                  <p className="descri">Belge</p>
-                </div>
-                <div className="color_button">
-                  <div className="blue"></div>
-                  <p className="descri">Blue</p>
-                </div>
-                <div className="color_button">
-                  <div className="black"></div>
-                  <p className="descri">Black</p>
-                </div>
-                <div className="color_button">
-                  <div className="orange"></div>
-                  <p className="descri">Orange</p>
-                </div>
-                <div className="color_button">
-                  <div className="green"></div>
-                  <p className="descri">Green</p>
-                </div>
-                <div className="color_button">
-                  <div className="brown"></div>
-                  <p className="descri">Brown</p>
-                </div>
-                <div className="color_button">
-                  <div className="purple"></div>
-                  <p className="descri">Purple</p>
-                </div>
-                <div className="color_button">
-                  <div className="gold"></div>
-                  <p className="descri">Gold</p>
-                </div>
-                <div className="color_button">
-                  <div className="taupe"></div>
-                  <p className="descri">Taupe</p>
-                </div>
-                <div className="color_button">
-                  <div className="white"></div>
-                  <p className="descri">White</p>
-                </div>
-                <div className="color_button">
-                  <div className="pink"></div>
-                  <p className="descri">Pink</p>
-                </div>
-                <div className="color_button">
-                  <div className="red"></div>
-                  <p className="descri">Red</p>
-                </div>
+                {colorCategories.map((color) => (
+                  <div
+                    className="color_button"
+                    key={color.key}
+                    onClick={() => filterColor(color.key)}
+                  >
+                    <div className={color.key}></div>
+                    <p className="descri">{color.key}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -209,10 +323,13 @@ const Shoes = () => {
             <div className="black_line"></div>
 
             <div className="product_content">
-              <Pagination
-                itemsPerPage={12}
-                items={filteredItems.length >= 1 ? filteredItems : shoesData}
-              />
+              {filteredItems.length >= 1 ? (
+                <div className="items">
+                  <Cards carts_data={filteredItems} />
+                </div>
+              ) : (
+                <Pagination itemsPerPage={12} items={shoesData} />
+              )}
             </div>
           </div>
         </div>

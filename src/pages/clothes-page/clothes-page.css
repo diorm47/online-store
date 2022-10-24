@@ -13,8 +13,32 @@
   display: flex;
   justify-content: space-between;
 }
-.products_part {
-  width: 100%;
+
+.cat_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.clear_filter_hided {
+  display: none;
+}
+
+.clear_filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.clear_filter p {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #c4c4c4;
+  margin-right: 16px;
+}
+.categories_list .active {
+  color: #ed165f;
+  background: transparent;
 }
 .base_title h1 {
   font-weight: 800;
@@ -32,6 +56,11 @@
 
 .categories {
   margin-bottom: 64px;
+  overflow: hidden;
+  outline: none;
+  position: relative;
+  z-index: 11;
+  transition: all 0.4s ease;
 }
 
 h2 {
@@ -40,6 +69,7 @@ h2 {
   line-height: 90%;
   color: #000000;
   margin-bottom: 16px;
+  cursor: pointer;
 }
 
 .black_line {
@@ -53,22 +83,41 @@ h2 {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  transition: all 0.4s ease;
+}
+.hided_list {
+  position: absolute;
+  top: -300px;
+  z-index: -22;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
 }
 
-.categories_list a {
+.categories_list p {
   font-weight: 600;
   font-size: 16px;
   line-height: 112%;
   margin: 12px 0;
   color: #686868;
+  text-transform: capitalize;
+  cursor: pointer;
 }
 
+.size_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .sizes_block {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 64px;
 }
-.size_button {
+.size span {
+  color: #c4c4c4;
+}
+.size_button_shoes {
   width: 54px;
   height: 32px;
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -84,22 +133,40 @@ h2 {
   margin: 0 16px 16px 0;
   cursor: pointer;
 }
+.size_button_shoes p {
+  text-transform: uppercase;
+}
+.activeSize {
+  background-color: #ed165f;
+  border: none;
+}
+.activeSize p {
+  color: #fff;
+}
 
 .colors {
   margin-bottom: 64px;
+}
+
+.colors_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .color_button {
   display: flex;
   align-items: center;
   margin: 0 16px 16px 0;
+  cursor: pointer;
 }
 
 .color_button p {
   font-weight: 400;
   font-size: 14px;
-  line-height: 129%;
+  line-height: 18px;
   color: #000000;
+  text-transform: capitalize;
 }
 
 .color_button div {
@@ -107,6 +174,10 @@ h2 {
   height: 32px;
   border-radius: 2px;
   margin-right: 7px;
+}
+
+.activeColor {
+  border: 1px solid #ed165f;
 }
 
 .colors_block {
@@ -158,6 +229,9 @@ h2 {
   font-size: 14px;
   cursor: pointer;
   color: #ffffff;
+}
+.products_part {
+  width: 100%;
 }
 
 .products_part .black_line {

@@ -21,18 +21,27 @@ export let homeData = [
     image: "../card_items/black_watch.jpg",
     description: "Multicolored armless top",
     price: 1500,
+    category: "denim",
+    color: "purple",
+    size: "28",
   },
   {
     id: 2,
     image: "../card_items/bee_watch.jpg",
     description: "Grey bee wrist-watch",
     price: 1500,
+    category: "jeans",
+    color: "gold",
+    size: "26",
   },
   {
     id: 3,
     image: "../card_items/black_watch.jpg",
     description: "Mini skirt",
     price: 1500,
+    category: "jackets and coats",
+    color: "pink",
+    size: "23",
   },
 
   {
@@ -40,108 +49,163 @@ export let homeData = [
     image: "../card_items/black_watch.jpg",
     description: "Red lightweight gown",
     price: 1500,
+    category: "sweaters & knits",
+    color: "red",
+    size: "27",
   },
   {
     id: 5,
     image: "../card_items/black_watch.jpg",
     description: "Blue botton-down gown",
     price: 1500,
+    category: "leather",
+    color: "brown",
+    size: "24",
   },
   {
     id: 6,
     image: "../card_items/moon_stars.jpg",
     description: "Moon and star neckpiece",
     price: 1500,
+    category: "skirts",
+    color: "white",
+    size: "29",
   },
   {
     id: 7,
     image: "../card_items/bag.jpg",
     description: "Tambourine Crossbody Bag ",
     price: 1500,
+    category: "jumpsuits",
+    color: "taupe",
+    size: "27",
   },
   {
     id: 8,
     image: "../card_items/perfume.jpg",
     description: "Katy Perry Killer Queen EDP",
     price: 1500,
+    category: "tops",
+    color: "beige",
+    size: "xs",
   },
   {
     id: 9,
     image: "../card_items/women_shoe.jpg",
     description: "High heels ladies shoes",
     price: 1500,
+    category: "dresses",
+    color: "brown",
+    size: "xl",
   },
   {
     id: 10,
     image: "../card_items/eyeglass.jpg",
     description: "Nerdy oval glasses",
     price: 1500,
+    category: "tops",
+    color: "black",
+    size: "23",
   },
+
   {
     id: 11,
     image: "../card_items/ring.jpg",
     description: "Diamond ladies ring",
     price: 1500,
+    category: "dresses",
+    color: "black",
+    size: "2",
   },
   {
     id: 12,
     image: "../card_items/black_watch.jpg",
     description: "Ladies bush pants ",
     price: 1500,
+    category: "jumpsuits",
+    color: "green",
+    size: "l",
   },
   {
     id: 13,
     image: "../card_items/stupy_shoe.jpg",
     description: "Guilhermina Embellished Slides",
     price: 1500,
+    category: "jeans",
+    color: "black",
+    size: "xs",
   },
   {
     id: 14,
     image: "../card_items/red_shoe.jpg",
     description: "Superga Plaid Sneakers",
     price: 1500,
+    category: "denim",
+    color: "blue",
+    size: "s",
   },
   {
     id: 15,
     image: "../card_items/black_watch.jpg",
     description: "Checked ladies trouser",
     price: 1500,
+    category: "dresses",
+    color: "red",
+    size: "m",
   },
   {
     id: 16,
     image: "../card_items/fleece.jpg",
     description: "Beanie winter fleece",
     price: 1500,
+    category: "pants",
+    color: "pink",
+    size: "xxs",
   },
   {
     id: 17,
     image: "../card_items/women_shoe.jpg",
     description: "High heels ladies shoes",
     price: 1500,
+    category: "loungerie & underwear",
+    color: "white",
+    size: "29",
   },
   {
     id: 18,
     image: "../card_items/black_watch.jpg",
     description: "Red lightweight gown",
     price: 1500,
+    category: "skirts",
+    color: "taupe",
+    size: "27",
   },
   {
     id: 19,
     image: "../card_items/moon_stars.jpg",
     description: "Moon and star neckpiece",
     price: 1500,
+    category: "shorts",
+    color: "gold",
+    size: "27",
   },
   {
     id: 20,
     image: "../card_items/bee_watch.jpg",
     description: "Grey bee wrist-watch",
     price: 1500,
+    category: "pants",
+    color: "purple",
+    size: "26",
   },
   {
     id: 21,
     image: "../card_items/perfume.jpg",
     description: "Katy Perry Killer Queen EDP",
     price: 1500,
+    category: "jackets and coats",
+    color: "brown",
+    size: "25",
   },
 
   {
@@ -149,30 +213,45 @@ export let homeData = [
     image: "../card_items/women_shoe.jpg",
     description: "High heels ladies shoes",
     price: 1500,
+    category: "tops ",
+    color: "green",
+    size: "29",
   },
   {
     id: 23,
     image: "../card_items/eyeglass.jpg",
     description: "Nerdy oval glasses",
     price: 1500,
+    category: "jumpsuits",
+    color: "orange",
+    size: "30",
   },
   {
     id: 24,
     image: "../card_items/perfume.jpg",
     description: "Katy Perry Killer Queen EDP",
     price: 1500,
+    category: "jeans",
+    color: "blue",
+    size: "32",
   },
   {
     id: 25,
     image: "../card_items/women_shoe.jpg",
     description: "High heels ladies shoes",
     price: 1500,
+    category: "denim ",
+    color: "black",
+    size: "31",
   },
   {
     id: 26,
     image: "../card_items/eyeglass.jpg",
     description: "Nerdy oval glasses",
     price: 1500,
+    category: "dresses",
+    color: "belge",
+    size: "32",
   },
 ];
 
@@ -183,7 +262,7 @@ export let shoesData = [
     description: "High heels ladies shoes",
     price: 2000,
     type: "boots",
-    size: 40,
+    size: "40/7.5",
     color: "green",
   },
   {
@@ -192,17 +271,16 @@ export let shoesData = [
     description: "Keds sneakers",
     price: 2000,
     type: "sneakers",
-    size: 35,
+    size: "35.5/5",
     color: "gold",
   },
   {
     id: 33,
-
     image: "../shoes_data/3.jpg",
     description: "Guilhermina Embellished Slides",
     price: 2000,
     type: "sandals",
-    size: 36,
+    size: "41.5/10",
     color: "orange",
   },
   {
@@ -211,8 +289,8 @@ export let shoesData = [
     description: "Summer shoes",
     price: 2000,
     type: "heels",
-    size: 41,
-    color: "brown",
+    size: "41/9.5",
+    color: "blue",
   },
   {
     id: 35,
@@ -220,8 +298,8 @@ export let shoesData = [
     description: "Casual Flat Loafers",
     price: 2000,
     type: "oxfords",
-    size: 43,
-    color: "black",
+    size: "43/12",
+    color: "taupe",
   },
   {
     id: 36,
@@ -229,8 +307,8 @@ export let shoesData = [
     description: "Black strappy peeptoe",
     price: 2000,
     type: "booties",
-    size: 41,
-    color: "black",
+    size: "41/9.5",
+    color: "belge",
   },
   {
     id: 37,
@@ -238,8 +316,8 @@ export let shoesData = [
     description: "Superga Platform Sneakers",
     price: 2000,
     type: "sneakers",
-    size: 39,
-    color: "black",
+    size: "39/7.5",
+    color: "red",
   },
   {
     id: 38,
@@ -247,8 +325,8 @@ export let shoesData = [
     description: "Heeled sandals",
     price: 2000,
     type: "slides",
-    size: 40,
-    color: "black",
+    size: "39.5/8",
+    color: "purple",
   },
   {
     id: 39,
@@ -256,8 +334,8 @@ export let shoesData = [
     description: "HAJINK Boat Shoes",
     price: 2000,
     type: "mules",
-    size: 41,
-    color: "black",
+    size: "36/5.5",
+    color: "pink",
   },
   {
     id: 310,
@@ -265,7 +343,7 @@ export let shoesData = [
     description: "Casual Flat Sandals",
     price: 2000,
     type: "sandals",
-    size: 42,
+    size: "42/11",
     color: "white",
   },
   {
@@ -274,7 +352,7 @@ export let shoesData = [
     description: "Summer Cork Slippers",
     price: 2000,
     type: "slippers",
-    size: 37,
+    size: "37.5/6.5",
     color: "brown",
   },
   {
@@ -283,7 +361,7 @@ export let shoesData = [
     description: "Ankle boots",
     price: 2000,
     type: "wedges",
-    size: 42,
+    size: "42/10.5",
     color: "brown",
   },
 
@@ -293,7 +371,7 @@ export let shoesData = [
     description: "Summer shoes",
     price: 2000,
     type: "vegan",
-    size: 39,
+    size: "39/7.5",
     color: "gold",
   },
   {
@@ -302,7 +380,7 @@ export let shoesData = [
     description: "Casual Flat Loafers",
     price: 2000,
     type: "party",
-    size: 40,
+    size: "40/7.5",
     color: "black",
   },
   {
@@ -311,7 +389,7 @@ export let shoesData = [
     description: "Black strappy peeptoe",
     price: 2000,
     type: "flats",
-    size: 38,
+    size: "38/7",
     color: "black",
   },
 ];
@@ -324,6 +402,7 @@ export let accessoriesData = [
     price: 1000,
     type: "handbag",
     color: "green",
+    size: "m"
   },
   {
     id: 414,
@@ -332,14 +411,16 @@ export let accessoriesData = [
     price: 1000,
     type: "handbag",
     color: "pink",
+    size: "m"
   },
   {
     id: 415,
     image: "../accessories_data/3.jpg",
     description: "Nereide Oval",
     price: 1000,
-    type: "eyewears",
+    type: "sunglasses & eyewears",
     color: "white",
+    size: "m"
   },
   {
     id: 416,
@@ -348,6 +429,7 @@ export let accessoriesData = [
     price: 1000,
     type: "jewelry",
     color: "gold",
+    size: "m"
   },
   {
     id: 417,
@@ -356,6 +438,7 @@ export let accessoriesData = [
     price: 1000,
     type: "hats",
     color: "red",
+    size: "m"
   },
   {
     id: 418,
@@ -364,6 +447,7 @@ export let accessoriesData = [
     price: 1000,
     type: "jewelry",
     color: "blue",
+    size: "m"
   },
 
   {
@@ -373,6 +457,7 @@ export let accessoriesData = [
     price: 1000,
     type: "watch",
     color: "brown",
+    size: "m"
   },
   {
     id: 420,
@@ -381,6 +466,7 @@ export let accessoriesData = [
     price: 1000,
     type: "sock",
     color: "blue",
+    size: "m"
   },
   {
     id: 421,
@@ -389,6 +475,7 @@ export let accessoriesData = [
     price: 1000,
     type: "watch",
     color: "black",
+    size: "m"
   },
   {
     id: 422,
@@ -397,6 +484,7 @@ export let accessoriesData = [
     price: 1000,
     type: "watch",
     color: "black",
+    size: "m"
   },
   {
     id: 423,
@@ -405,6 +493,7 @@ export let accessoriesData = [
     price: 1000,
     type: "sock",
     color: "brown",
+    size: "m"
   },
   {
     id: 424,
@@ -413,6 +502,7 @@ export let accessoriesData = [
     price: 1000,
     type: "handbag",
     color: "brown",
+    size: "m"
   },
   {
     id: 425,
@@ -421,6 +511,7 @@ export let accessoriesData = [
     price: 1000,
     type: "handbag",
     color: "brown",
+    size: "m"
   },
   {
     id: 426,
@@ -429,6 +520,7 @@ export let accessoriesData = [
     price: 1000,
     type: "handbag",
     color: "brown",
+    size: "m"
   },
   {
     id: 527,
@@ -437,6 +529,7 @@ export let accessoriesData = [
     price: 1000,
     type: "handbag",
     color: "brown",
+    size: "m"
   },
   {
     id: 628,
@@ -445,5 +538,6 @@ export let accessoriesData = [
     price: 1000,
     type: "handbag",
     color: "brown",
+    size: "m"
   },
 ];
