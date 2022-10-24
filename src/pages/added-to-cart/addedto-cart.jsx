@@ -9,7 +9,7 @@ import { deleteFromCart } from "../../redux/cart-reducer";
 import { addToFavorite } from "../../redux/favorite-reducer";
 import { NavLink } from "react-router-dom";
 import Auth from "./../../components/auth/authorization";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const AddedToCart = () => {
   const navigate = useNavigate();

@@ -57,9 +57,13 @@ const Order = () => {
                 <p>Door delivery</p>
 
                 <h3 className="shipping_adress">Shipping address</h3>
-                <p>{adress.state}</p>
-                <p>{adress.city}</p>
-                <p>{adress.adress}</p>
+                {adress == null || (
+                  <>
+                    <p>{adress.state}</p>
+                    <p>{adress.city}</p>
+                    <p>{adress.adress}</p>
+                  </>
+                )}
               </div>
             </div>
           ))
