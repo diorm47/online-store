@@ -282,7 +282,11 @@ option {
   margin-bottom: 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product_content .items .card_item {
+   margin-right: 30px;
 }
 
 @media only screen and (max-width: 1360px) {

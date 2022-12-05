@@ -19,6 +19,7 @@ const HomePage = () => {
   if (localStorage.getItem("authorized")) {
     dispatch(setAuthorized(true));
   }
+  
   return (
     <div className="home_page">
       <header>

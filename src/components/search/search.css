@@ -4,9 +4,13 @@
   padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   position: relative;
+}
+
+.search_wrapper .card_item {
+  margin-right: 50px;
 }
 
 .search_wrapper .item_not_found {

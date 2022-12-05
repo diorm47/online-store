@@ -68,6 +68,7 @@ const ProfilePage = () => {
         </div>
         <div className="content_part">
           <Routes>
+          <Route path="/" element={<AccountInf />} />
             <Route path="/user" element={<AccountInf />} />
             <Route path="/adress" element={<AdressBook />} />
             <Route path="/order" element={<Order />} />

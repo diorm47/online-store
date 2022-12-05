@@ -12,8 +12,6 @@ import Snackbar from "../snackbar/snackbar";
 import "./cards.css";
 
 const Cards = ({ carts_data }) => {
-  const isAuth = useSelector((state) => state.auth.isAuth);
-
   const favoriteEl = useSelector((state) => state.favorite.favorite);
   const inCart = useSelector((state) => state.cart.cart);
 
@@ -23,9 +21,6 @@ const Cards = ({ carts_data }) => {
   const [cart, setCartMess] = useState(false);
 
   const addDelFavor = (data) => {
-    if (isAuth === false) {
-      return alert("You are not Authorized!!!");
-    }
     const isItemInFav = favoriteEl.some((item) => item.id === data.id);
     if (isItemInFav) {
       dispatch(deleteFromFavorite(data.id));
@@ -45,10 +40,6 @@ const Cards = ({ carts_data }) => {
   };
 
   const addToCartt = (data) => {
-    if (isAuth === false) {
-      return alert("You are not Authorized!!!");
-    }
-
     const isItemInCart = inCart.some((item) => item.id === data.id);
     if (isItemInCart) {
       dispatch(deleteFromCart(data.id));
